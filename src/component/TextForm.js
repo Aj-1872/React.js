@@ -40,9 +40,6 @@ export default function TextForm(x) {
       setText(event.target.value);
       
     }
-    
-
-   
 
 // text = "new text";wrong way to change
 // setText("new text");correct way
