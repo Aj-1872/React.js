@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from 'prop-types'
-
+import PropTypes from "prop-types";
 
 export default function Navbar(x) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className={`navbar navbar-expand-lg navbar-${x.mode} bg-${x.mode}`}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             {x.title}
@@ -46,20 +45,30 @@ export default function Navbar(x) {
               </button>
             </form>
           </div>
+          <div className="form-check form-switch mx-2">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+              onClick={x.toggleMode}
+            />
+            <label className={`form-check-label text-${x.revMode} `} htmlFor="flexSwitchCheckDefault">
+              {`Enable ${x.revMode}mode`}
+            </label>
+          </div>
         </div>
       </nav>
     </div>
   );
 }
 
-
-Navbar.propTypes={
-    title: PropTypes.string.isRequired,
-    aboutText: PropTypes.string.isRequired
-}
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  aboutText: PropTypes.string.isRequired,
+};
 
 Navbar.defaultProps = {
-    title: 'TextUtiles',
-    aboutText: 'About-TextUtiles'
-}
-
+  title: "TextUtiles",
+  aboutText: "About-TextUtiles",
+};

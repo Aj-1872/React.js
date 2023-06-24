@@ -46,12 +46,12 @@ export default function TextForm(x) {
 
   return (
     <>
-    <div className="container">
+    <div className={`container text-${x.revMode} `} >
 
       <form>
       <h3>{x.heading}</h3>
       <div className="form-floating">
-           <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea" value={text} onChange={handleOnChange} style={{ fontWeight: isBold ? 'bold' : 'normal' }}></textarea>
+           <textarea  className={`form-control bg-${x.mode}`} placeholder="Leave a comment here" id="floatingTextarea" value={text} onChange={handleOnChange} style={{ fontWeight: isBold ? 'bold' : 'normal',color: x.mode=== 'dark'? 'white':'black' }}></textarea>
            <label htmlFor="floatingTextarea">{x.label}</label>
       </div>
       </form>
@@ -67,19 +67,21 @@ export default function TextForm(x) {
 
     </div>
 
-    <div className="container my-2">
+    <div className={`container my-2 `} style={{color: x.mode=== 'dark'? 'white':'black'}}>
 
       <h3>Your text summary</h3>
       <p>Words : {word} </p>
       <p>Character : {character}</p>
       <p>{((word)*0.008)} Minutes to read</p>
       <h4>Preview</h4>
-      <p>{text}</p>
+      <p>{text.length > 0 ? text : "Enter Somthing"}</p>
 
     </div>
     </>
   );
 }
+
+// text-${x.revMode}
 
 TextForm.defaultProps = {
   label: 'Textarea',
