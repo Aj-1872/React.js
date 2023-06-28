@@ -51,7 +51,12 @@ export default function Navbar(x) {
               type="checkbox"
               role="switch"
               id="flexSwitchCheckDefault"
-              onClick={x.toggleMode}
+              onClick={()=>{
+                x.toggleMode();
+               
+
+              }}
+              
             />
             <label className={`form-check-label text-${x.revMode} `} htmlFor="flexSwitchCheckDefault">
               {`Enable ${x.revMode}mode`}

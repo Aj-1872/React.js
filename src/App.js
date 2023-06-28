@@ -15,11 +15,14 @@ function App() {
     setMode('dark');
     setReverseMode('light')
     document.body.style.backgroundColor = '#212529';
+    showAlert('Dark mode has been enabled','Success');
     }
     else{
       setMode('light');
       setReverseMode('dark');
     document.body.style.backgroundColor = 'white';
+    showAlert('Light mode has been enabled','Success');
+
 
       
     }
@@ -31,10 +34,11 @@ function App() {
 
 
     setAlert ({
-      message : message,
+      msg : message,
       type : type
 
     })
+    
 
 
 
@@ -43,7 +47,7 @@ function App() {
   return (
     <div>
       <Navbar title="TextUtiles" mode={mode} toggleMode={toggleMode} revMode={reverseMode} />
-      <Alert alert="this is alert" />
+      <Alert alert={alert} />
       <div className="container my-3">
         <TextForm heading="Enter the text to analyze" mode={mode} revMode={reverseMode} />
       </div>
