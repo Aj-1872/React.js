@@ -39,6 +39,9 @@ function App() {
       type : type
 
     })
+    setTimeout(() => {
+      setAlert(null,null);
+    }, 2000);
 
   }
 
@@ -47,7 +50,7 @@ function App() {
       <Navbar title="TextUtiles" mode={mode} toggleMode={toggleMode} revMode={reverseMode} />
       <Alert alert={alert} revMode={reverseMode}/>
       <div className="container my-3">
-        <TextForm heading="Enter the text to analyze" mode={mode} revMode={reverseMode} />
+        <TextForm  showAlert={showAlert} heading="Enter the text to analyze" mode={mode} revMode={reverseMode} />
       </div>
       <div className="container">
         {/* <About /> */}

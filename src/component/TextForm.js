@@ -13,17 +13,23 @@ export default function TextForm(x) {
     console.log("Uppercase was clicked ");
     let newText = text.toUpperCase();
     setText(newText);
+    x.showAlert('To Uppercase','Success');
+
     }
 
     const handleLowClick=()=>{
       console.log("Lowercase was clicked");
       let newText = text.toLowerCase();
       setText(newText);
+    x.showAlert('To Lowercase','Success');
+
     }
 
     const handleBoldClick=()=>{
       console.log("Bold was clicked");
       setIsBold(!isBold);
+    x.showAlert('bold','Success');
+
     }
 
     const clearText =()=>{
@@ -32,13 +38,13 @@ export default function TextForm(x) {
       word = 0;
       character = 0;
       setText(newText);
-    }
+    x.showAlert('Clear Text','Success');
 
+    }
 
     const handleOnChange=(event)=>{
       console.log("On change");
       setText(event.target.value);
-      
     }
 
 // text = "new text";wrong way to change
