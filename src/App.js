@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from './component/Navbar';
 import TextForm from './component/TextForm';
-// import About from './component/About';
+import About from './component/About';
 import './App.css';
 import Alert from './component/Alert';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import Navbar from './component/Navbar';
 
 function App() {
   const [mode, setMode] = useState('light'); // weather dark mode is enable or not.
@@ -46,16 +48,24 @@ function App() {
   }
 
   return (
-    <div>
-      <Navbar title="TextUtiles" mode={mode} toggleMode={toggleMode} revMode={reverseMode} />
-      <Alert alert={alert} revMode={reverseMode}/>
+    <Router>
+    <>
+      <Navbar
+        title="TextUtiles"
+        mode={mode}
+        toggleMode={toggleMode}
+        revMode={reverseMode}
+      />
+      <Alert alert={alert} revMode={reverseMode} />
+
       <div className="container my-3">
-        <TextForm  showAlert={showAlert} heading="Enter the text to analyze" mode={mode} revMode={reverseMode} />
+        <Routes>
+          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} revMode={reverseMode} />} />
+          <Route exact path="/about" element={<About />} />
+        </Routes>
       </div>
-      <div className="container">
-        {/* <About /> */}
-      </div>
-    </div>
+    </>
+  </Router>
   );
 }
 
