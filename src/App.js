@@ -26,6 +26,7 @@ function App() {
 
       
     }
+  
   }
 
   const [alert, setAlert] = useState(null);
@@ -38,16 +39,13 @@ function App() {
       type : type
 
     })
-    
-
-
 
   }
 
   return (
     <div>
       <Navbar title="TextUtiles" mode={mode} toggleMode={toggleMode} revMode={reverseMode} />
-      <Alert alert={alert} />
+      <Alert alert={alert} revMode={reverseMode}/>
       <div className="container my-3">
         <TextForm heading="Enter the text to analyze" mode={mode} revMode={reverseMode} />
       </div>
