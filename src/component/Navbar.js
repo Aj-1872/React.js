@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom"; use Link instead of a and to instead href
+
 
 export default function Navbar(x) {
   return (
     <div>
       <nav className={`navbar navbar-expand-lg navbar-${x.mode} bg-${x.mode}`}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <a className="navbar-brand" href="#">
             {x.title}
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -24,14 +25,14 @@ export default function Navbar(x) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <a className="nav-link active" aria-current="page" href="#">
                   Home
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="about">
+                <a className="nav-link" href="#">
                   {x.aboutText}
-                </Link>
+                </a>
               </li>
             </ul>
             <form className="d-flex" role="search">
