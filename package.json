@@ -1,8 +1,8 @@
 {
-  "homepage": "https://Aj-1872.github.io/React.js-Text-Utils",
+  "homepage": "https://Aj-1872.github.io/js/",
   "name": "first",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
