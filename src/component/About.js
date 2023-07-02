@@ -1,38 +1,43 @@
 import React from 'react'
 import { useState } from 'react'
 
-export default function About() {
+export default function About(x) {
     
-  const [myStyle, setMyStyle] = useState(
-     {
-        color:'white',
-        backgroundColor:'black',
-        border:'2px solid white '
+  // const [myStyle, setMyStyle] = useState(
+  //    {
+  //       color:'white',
+  //       backgroundColor:'black',
+  //       border:'2px solid white '
         
-    })
+  //   })
+
+  let myStyle = {
+    color : x.mode === 'dark'? 'white':'black',
+    backgroundColor : x.mode === 'light'? 'white':'#212529' 
+  }
     
-    const [btnText, setBtnText] = useState('light')
+    // const [btnText, setBtnText] = useState('light')
 
-    const mode =()=>{
-        if(myStyle.color==='white'){
-            setMyStyle(
-                {
-                   color:'black',
-                   backgroundColor:'white'
-                })
+    // const mode =()=>{
+    //     if(myStyle.color==='white'){
+    //         setMyStyle(
+    //             {
+    //                color:'black',
+    //                backgroundColor:'white'
+    //             })
 
-                setBtnText('dark');
-        }
-        else{
-            setMyStyle(
-                {
-                   color:'white',
-                   backgroundColor:'black'
-                })
-                setBtnText('light');
+    //             setBtnText('dark');
+    //     }
+    //     else{
+    //         setMyStyle(
+    //             {
+    //                color:'white',
+    //                backgroundColor:'black'
+    //             })
+    //             setBtnText('light');
 
-        }
-    }
+    //     }
+    // }
 
 
 
@@ -51,7 +56,7 @@ export default function About() {
       <div style={myStyle} className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
     </div>
   </div>
-  <div className="accordion-item">
+  <div className="accordion-item"style={myStyle}>
     <h2 className="accordion-header">
       <button style={myStyle} className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
         Accordion Item #2
@@ -73,8 +78,8 @@ export default function About() {
   </div>
 </div>
 
-<button onClick={mode} style={myStyle} type="button" className="btn btn-primary m-2">{btnText}</button>
 
     </div>
   )
 }
+

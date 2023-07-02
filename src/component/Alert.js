@@ -9,10 +9,12 @@ import React from 'react'
 
 export default function Alert(x) {
   return (
-    x.alert && 
-      <div className={`alert alert-${x.alert.type} alert-dismissible fade show text-${x.revMode}`} role="alert">
-        <strong>{capitalize(x.alert.type)}</strong>:{x.alert.msg}
-            </div>
+    <div style={{height:'50px'}}>
+    {x.alert && 
+    <div className={`alert alert-${x.alert.type} alert-dismissible fade show text-${x.revMode}`} role="alert">
+    <strong>{capitalize(x.alert.type)}</strong>:{x.alert.msg}
+    </div>}
+    </div>
   )                
 }
 

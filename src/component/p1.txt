@@ -1,1 +1,21 @@
-vsjndjbc
+//   <>
+  //     <Navbar
+  //       title="TextUtiles"
+  //       mode={mode}
+  //       toggleMode={toggleMode}
+  //       revMode={reverseMode}
+  //     />
+  //     <Alert alert={alert} revMode={reverseMode} />
+
+  //     <div className="container my-3">
+        
+  //         <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} revMode={reverseMode} />
+  //         {/* {<About />}  */}
+      
+  //     </div>
+  //   </>
+  
+  // );
+
+
+
